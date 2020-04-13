@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "blogs",
+  "info": {
+    "name": "Blog"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    },
+    "category": {
+      "model": "blog-category",
+      "via": "blogs"
+    },
+    "tags": {
+      "collection": "blog-tag",
+      "via": "blogs",
+      "dominant": true
+    },
+    "private": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    }
+  }
+}

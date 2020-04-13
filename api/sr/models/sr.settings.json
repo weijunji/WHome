@@ -1,0 +1,81 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "srs",
+  "info": {
+    "name": "Sr"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "nameCn": {
+      "type": "string"
+    },
+    "ep": {
+      "type": "integer",
+      "min": 0,
+      "required": false,
+      "default": 0
+    },
+    "epCount": {
+      "required": false,
+      "default": 1,
+      "type": "integer",
+      "min": 0
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "do",
+        "wish",
+        "finish",
+        "hold"
+      ],
+      "default": "wish",
+      "required": true
+    },
+    "update": {
+      "type": "integer",
+      "required": true,
+      "default": 0,
+      "min": 0,
+      "max": 7
+    },
+    "link": {
+      "type": "string"
+    },
+    "comment": {
+      "type": "text"
+    },
+    "introduce": {
+      "type": "richtext"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "anim",
+        "game",
+        "series",
+        "movie"
+      ]
+    },
+    "star": {
+      "type": "integer",
+      "min": 1,
+      "max": 5,
+      "default": 3
+    }
+  }
+}

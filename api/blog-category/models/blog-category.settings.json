@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "blog_categories",
+  "info": {
+    "name": "BlogCategory"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "blogs": {
+      "via": "category",
+      "collection": "blog"
+    },
+    "icon": {
+      "type": "string",
+      "default": "fa-blog",
+      "required": false
+    },
+    "color": {
+      "type": "string",
+      "required": false,
+      "default": "#333333"
+    }
+  }
+}

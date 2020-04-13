@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "connection": "default",
+  "collectionName": "books",
+  "info": {
+    "name": "Book"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "cover": {
+      "model": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": true
+    },
+    "color": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "author": {
+      "model": "book-author",
+      "via": "books"
+    },
+    "category": {
+      "model": "book-category",
+      "via": "books"
+    },
+    "introduce": {
+      "type": "richtext",
+      "required": true
+    },
+    "comment": {
+      "type": "richtext",
+      "required": false
+    },
+    "star": {
+      "type": "integer",
+      "required": true,
+      "default": 3,
+      "max": 5,
+      "min": 1
+    },
+    "read": {
+      "type": "enumeration",
+      "enum": [
+        "wait",
+        "reading",
+        "finish"
+      ]
+    },
+    "link": {
+      "type": "string"
+    }
+  }
+}
