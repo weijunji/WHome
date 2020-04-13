@@ -11,7 +11,7 @@
   "admin": {
     "path": "/dashboard",
     "build": {
-      "backend": "http://api.weijunji.top"
+      "backend": "https://api.weijunji.top"
     }
   }
 }
