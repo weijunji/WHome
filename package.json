@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "dependencies": {
-    "file-type": "^14.1.4",
+    "file-type": "^16.5.4",
     "knex": "<0.20.0",
     "lru-cache": "^5.1.1",
     "node-fetch": "^2.6.0",
